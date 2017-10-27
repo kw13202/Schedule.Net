@@ -104,6 +104,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\scripts\schedule\index.js" />
     <Content Include="Content\thrid\layui\css\layui.css" />
     <Content Include="Content\thrid\layui\css\layui.mobile.css" />
     <Content Include="Content\thrid\layui\css\modules\code.css" />
@@ -214,6 +215,8 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\ReturnData.cs" />
+    <Compile Include="Models\Schedules.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -235,7 +238,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
