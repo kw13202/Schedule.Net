@@ -11,6 +11,7 @@ namespace ScheduleConsoleTest
     {
         public void Execute(IJobExecutionContext context)
         {
+            JobDataMap map = context.MergedJobDataMap;
             Console.WriteLine(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
         }
     }
