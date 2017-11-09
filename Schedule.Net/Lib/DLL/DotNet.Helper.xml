@@ -1,0 +1,694 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>DotNet.Helper</name>
+    </assembly>
+    <members>
+        <member name="T:DotNet.Helper.HttpRuntimeCacheHelper">
+            <summary>
+            Web运行时缓存
+            </summary>
+        </member>
+        <member name="M:DotNet.Helper.HttpRuntimeCacheHelper.GetHttpRuntimeCache(System.String)">
+            <summary>
+            缓存获取
+            </summary>
+            <param name="cacheKey">缓存主键</param>
+            <returns></returns>
+        </member>
+        <member name="M:DotNet.Helper.HttpRuntimeCacheHelper.SetHttpRuntimeCache(System.String,System.Object)">
+            <summary>
+            设置缓存
+            </summary>
+            <param name="cacheKey">缓存主键</param>
+            <param name="value">缓存值</param>
+        </member>
+        <member name="M:DotNet.Helper.HttpRuntimeCacheHelper.SetHttpRuntimeCache(System.String,System.Object,System.Int32)">
+            <summary>
+            设置缓存
+            </summary>
+            <param name="cacheKey">缓存主键</param>
+            <param name="value">缓存值</param>
+            <param name="minutes">过期时间(分钟)</param>
+        </member>
+        <member name="M:DotNet.Helper.HttpRuntimeCacheHelper.SetHttpRuntimeCache(System.String,System.Object,System.Web.Caching.CacheDependency)">
+            <summary>
+            设置缓存
+            </summary>
+            <param name="cacheKey">缓存主键</param>
+            <param name="value">缓存值</param>
+            <param name="cacheDependency">所插入对象的文件依赖项或缓存键依赖项。当任何依赖项更改时，该对象即无效，并从缓存中移除。如果没有依赖项，则此参数包含 null。</param>
+        </member>
+        <member name="M:DotNet.Helper.HttpRuntimeCacheHelper.SetHttpRuntimeCache(System.String,System.Object,System.Int32,System.Web.Caching.CacheItemRemovedCallback)">
+            <summary>
+            设置缓存
+            </summary>
+            <param name="cacheKey">缓存主键</param>
+            <param name="value">缓存值</param>
+            <param name="minutes">过期时间(分钟)</param>
+            <param name="onRemoveCallback">在从缓存中移除对象时将调用的委托（如果提供）。当从缓存中删除应用程序的对象时，可使用它来通知应用程序。</param>
+        </member>
+        <member name="M:DotNet.Helper.HttpRuntimeCacheHelper.RemoveRuntimeCache(System.String)">
+            <summary>
+            移除缓存
+            </summary>
+            <param name="cacheKey">缓存主键</param>
+        </member>
+        <member name="T:DotNet.Helper.SessionHelper">
+            <summary>
+            Session 操作类
+            </summary>
+        </member>
+        <member name="M:DotNet.Helper.SessionHelper.GetSession(System.String)">
+            <summary>
+            根据session名获取session对象
+            </summary>
+            <param name="name">session名</param>
+            <returns>session对象</returns>
+        </member>
+        <member name="M:DotNet.Helper.SessionHelper.SetSession(System.String,System.Object)">
+            <summary>
+            设置session
+            </summary>
+            <param name="name">session名</param>
+            <param name="val">session值</param>
+        </member>
+        <member name="M:DotNet.Helper.SessionHelper.RemoveSession(System.String)">
+            <summary>
+            删除一个指定的session
+            </summary>
+            <param name="name">session名</param>
+        </member>
+        <member name="M:DotNet.Helper.SessionHelper.ClearAll">
+            <summary>
+            清空所有的session
+            </summary>
+        </member>
+        <member name="M:DotNet.Helper.SessionHelper.SetTimeOut(System.Int32)">
+            <summary>
+            (全局)设置session过期时间
+             Timeout属性不能设置为超过 525,600 分钟(1年)的值。 默认值为 20 分钟。 
+             <param name="iExpires">调动有效期(分钟)</param>
+            <remarks>同时可以在web.config中system.web节点中使用sessionState配置timeout属性</remarks>
+            </summary>
+        </member>
+        <member name="T:DotNet.Helper.AppSettingsHelper">
+            <summary>
+            配置获取帮助类
+            </summary>
+        </member>
+        <member name="M:DotNet.Helper.AppSettingsHelper.GetIntByKey(System.String,System.Int32)">
+            <summary>
+            根据Key从配置文件获取Int值--取配置值通用方法
+            </summary>
+            <param name="key"></param>
+            <param name="defaultValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DotNet.Helper.AppSettingsHelper.GetStringByKey(System.String,System.String)">
+            <summary>
+            获取字符串配置值--取配置值通用方法
+            </summary>
+            <param name="key">配置Key</param>
+            <param name="defaultValue">默认值</param>
+            <returns></returns>
+        </member>
+        <member name="T:DotNet.Helper.Log4netHelper">
+            <summary>
+            log4net日志帮助类
+            </summary>
+        </member>
+        <member name="P:DotNet.Helper.Log4netHelper.Log">
+            <summary>
+            日志属性
+            </summary>
+        </member>
+        <member name="M:DotNet.Helper.Log4netHelper.WriteInfo(System.String)">
+            <summary>
+            写普通信息
+            </summary>
+            <param name="msg">消息</param>
+        </member>
+        <member name="M:DotNet.Helper.Log4netHelper.WriteDebug(System.String)">
+            <summary>
+            写调试信息
+            </summary>
+            <param name="msg">消息</param>
+        </member>
+        <member name="M:DotNet.Helper.Log4netHelper.WriteError(System.String)">
+            <summary>
+            写错误信息
+            </summary>
+            <param name="msg">消息</param>
+        </member>
+        <member name="M:DotNet.Helper.Log4netHelper.WriteError(System.String,System.Exception)">
+            <summary>
+            写错误信息
+            </summary>
+            <param name="msg">消息</param>
+            <param name="ex">错误信息</param>
+        </member>
+        <member name="T:DotNet.Helper.CmdHelper">
+            <summary>
+            命令行帮助类
+            </summary>
+        </member>
+        <member name="M:DotNet.Helper.CmdHelper.RunCmd(System.String,System.String@)">
+            <summary>
+            运行cmd
+            </summary>
+            <param name="cmd">cmd命令</param>
+            <param name="output">执行命令后的返回</param>
+        </member>
+        <member name="T:DotNet.Helper.HttpClentHelper">
+            <summary>
+            Http请求帮助类
+            </summary>
+        </member>
+        <member name="M:DotNet.Helper.HttpClentHelper.#cctor">
+            <summary>
+            静态构造函数
+            </summary>
+        </member>
+        <member name="M:DotNet.Helper.HttpClentHelper.CreateXClient">
+            <summary>
+            创建XClient
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:DotNet.Helper.HttpClentHelper.CreateHttpClient(System.String)">
+            <summary>
+            根据关键字，创建对应的HttpClient
+            </summary>
+            <param name="key"></param>
+        </member>
+        <member name="M:DotNet.Helper.HttpClentHelper.SetProxy(System.Net.WebProxy,System.String)">
+            <summary>
+            设置代理
+            </summary>
+            <param name="proxy">代理</param>
+            <param name="key">HttpClient键</param>
+        </member>
+        <member name="M:DotNet.Helper.HttpClentHelper.SetHeader(System.String,System.String,System.String)">
+            <summary>
+            添加全局Header
+            </summary>
+            <param name="headerKey">Header键</param>
+            <param name="headerValue">Header值</param>
+            <param name="key">HttpClient键</param>
+        </member>
+        <member name="M:DotNet.Helper.HttpClentHelper.Get(System.String,System.String)">
+            <summary>
+            通过GET请求获取内容
+            </summary>
+            <param name="url">请求地址</param>
+            <param name="key">HttpClient键</param>
+            <returns></returns>
+        </member>
+        <member name="M:DotNet.Helper.HttpClentHelper.Post(System.String,System.String,System.String)">
+            <summary>
+            通过POST请求获取内容
+            </summary>
+            <param name="url">请求地址</param>
+            <param name="content">请求内容</param>
+            <param name="key">HttpClient键</param>
+            <returns></returns>
+        </member>
+        <member name="M:DotNet.Helper.HttpClentHelper.Send(System.Net.Http.HttpRequestMessage,System.String)">
+            <summary>
+            发送http请求
+            </summary>
+            <param name="reqMessage">请求实体</param>
+            <param name="key">HttpClient键</param>
+            <returns></returns>
+        </member>
+        <member name="T:DotNet.Helper.XClient">
+            <summary>
+            请求客户端
+            </summary>
+        </member>
+        <member name="P:DotNet.Helper.XClient.Handler">
+            <summary>
+            请求的默认设置
+            </summary>
+        </member>
+        <member name="P:DotNet.Helper.XClient.Client">
+            <summary>
+            HttpClient
+            </summary>
+        </member>
+        <member name="T:DotNet.Helper.XResponse">
+            <summary>
+            返回实体
+            </summary>
+        </member>
+        <member name="P:DotNet.Helper.XResponse.StatusCode">
+            <summary>
+            状态码
+            </summary>
+        </member>
+        <member name="P:DotNet.Helper.XResponse.Content">
+            <summary>
+            回应内容
+            </summary>
+        </member>
+        <member name="T:DotNet.Helper.ImageHelper">
+            <summary>
+            图片帮助类
+            </summary>
+        </member>
+        <member name="M:DotNet.Helper.ImageHelper.AddWaterMark(System.String,System.String,System.String,DotNet.Helper.WaterMarkPosition,System.Int32)">
+            <summary>
+            给图片添加文字水印
+            </summary>
+            <param name="imageFile">图片路径</param>
+            <param name="newpath">新图片保存路径</param>
+            <param name="waterText">水印内容</param>
+            <param name="position">水印绘制位置</param>
+            <param name="rotate">旋转角度，默认为0，范围-360 小于等于 rotate 小于等于 360</param>
+        </member>
+        <member name="T:DotNet.Helper.WaterMarkPosition">
+            <summary>
+            水印位置枚举
+            </summary>
+        </member>
+        <member name="F:DotNet.Helper.WaterMarkPosition.Left_Top">
+            <summary>
+            左上角
+            </summary>
+        </member>
+        <member name="F:DotNet.Helper.WaterMarkPosition.Left_Bottom">
+            <summary>
+            左下角
+            </summary>
+        </member>
+        <member name="F:DotNet.Helper.WaterMarkPosition.Right_Top">
+            <summary>
+            右上角
+            </summary>
+        </member>
+        <member name="F:DotNet.Helper.WaterMarkPosition.Right_Bottom">
+            <summary>
+            右下角
+            </summary>
+        </member>
+        <member name="F:DotNet.Helper.WaterMarkPosition.Center">
+            <summary>
+            中间
+            </summary>
+        </member>
+        <member name="T:DotNet.Helper.MailHelper">
+            <summary>
+            邮件帮助类
+            </summary>
+        </member>
+        <member name="M:DotNet.Helper.MailHelper.Send(DotNet.Helper.MailModel)">
+            <summary>
+            发送邮件(同步)
+            </summary>
+            <param name="model">邮件实体</param>
+            <returns></returns>
+        </member>
+        <member name="M:DotNet.Helper.MailHelper.SendAsync(DotNet.Helper.MailModel,System.Net.Mail.SendCompletedEventHandler,System.Object)">
+            <summary>
+            发送邮件(异步)
+            </summary>
+            <param name="model">邮件实体</param>
+            <param name="handler">完成事件</param>
+            <param name="obj">传递给完成事件的实体</param>
+        </member>
+        <member name="M:DotNet.Helper.MailHelper.SendMailAsync(DotNet.Helper.MailModel)">
+            <summary>
+            发送邮件(异步)
+            需要framework 4.5支持
+            </summary>
+            <param name="model">邮件实体</param>
+            <returns></returns>
+        </member>
+        <member name="M:DotNet.Helper.MailHelper.SetConfig(DotNet.Helper.MailModel,System.Net.Mail.MailMessage@,System.Net.Mail.SmtpClient@)">
+            <summary>
+            设置
+            </summary>
+            <param name="model">邮件实体</param>
+            <param name="message"></param>
+            <param name="client"></param>
+        </member>
+        <member name="T:DotNet.Helper.MailModel">
+            <summary>
+            邮件实体
+            </summary>
+        </member>
+        <member name="M:DotNet.Helper.MailModel.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="P:DotNet.Helper.MailModel.Subject">
+            <summary>
+            邮件标题
+            </summary>
+        </member>
+        <member name="P:DotNet.Helper.MailModel.Body">
+            <summary>
+            邮件内容
+            </summary>
+        </member>
+        <member name="P:DotNet.Helper.MailModel.Encode">
+            <summary>
+            邮件编码，默认为UTF8
+            </summary>
+        </member>
+        <member name="P:DotNet.Helper.MailModel.IsBodyHtml">
+            <summary>
+            正文是否为html格式，默认是
+            </summary>
+        </member>
+        <member name="P:DotNet.Helper.MailModel.Priority">
+            <summary>
+            邮件优先级别，默认普通
+            </summary>
+        </member>
+        <member name="P:DotNet.Helper.MailModel.Options">
+            <summary>
+            设置通知，默认失败通知
+            </summary>
+        </member>
+        <member name="P:DotNet.Helper.MailModel.From">
+            <summary>
+            发件人
+            </summary>
+        </member>
+        <member name="P:DotNet.Helper.MailModel.To">
+            <summary>
+            收件人
+            </summary>
+        </member>
+        <member name="P:DotNet.Helper.MailModel.CC">
+            <summary>
+            抄送人
+            </summary>
+        </member>
+        <member name="P:DotNet.Helper.MailModel.Bcc">
+            <summary>
+            密送人
+            </summary>
+        </member>
+        <member name="P:DotNet.Helper.MailModel.SMTPHost">
+            <summary>
+            SMTP主机地址
+            </summary>
+        </member>
+        <member name="P:DotNet.Helper.MailModel.SMTPPort">
+            <summary>
+            SMTP主机端口，默认25
+            </summary>
+        </member>
+        <member name="P:DotNet.Helper.MailModel.Pwd">
+            <summary>
+            发信邮箱密码
+            </summary>
+        </member>
+        <member name="P:DotNet.Helper.MailModel.EnableSsl">
+            <summary>
+            是否启用SSL，默认不启用
+            </summary>
+        </member>
+        <member name="T:DotNet.Helper.MailResult">
+            <summary>
+            邮件发送结果类
+            </summary>
+        </member>
+        <member name="M:DotNet.Helper.MailResult.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:DotNet.Helper.MailResult.#ctor(System.Boolean,System.Exception)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="flag">是否成功</param>
+            <param name="ex">错误信息</param>
+        </member>
+        <member name="P:DotNet.Helper.MailResult.Flag">
+            <summary>
+            是否成功
+            </summary>
+        </member>
+        <member name="P:DotNet.Helper.MailResult.Exception">
+            <summary>
+            错误信息
+            </summary>
+        </member>
+        <member name="T:DotNet.Helper.MailAsyncResult">
+            <summary>
+            异步结果类
+            </summary>
+        </member>
+        <member name="M:DotNet.Helper.MailAsyncResult.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:DotNet.Helper.MailAsyncResult.#ctor(System.Net.Mail.MailMessage,System.Net.Mail.SmtpClient,System.Object)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="message">发信内容</param>
+            <param name="smtp">发信代理</param>
+            <param name="data">数据</param>
+        </member>
+        <member name="P:DotNet.Helper.MailAsyncResult.message">
+            <summary>
+            发信内容
+            </summary>
+        </member>
+        <member name="P:DotNet.Helper.MailAsyncResult.smtp">
+            <summary>
+            发信代理
+            </summary>
+        </member>
+        <member name="P:DotNet.Helper.MailAsyncResult.data">
+            <summary>
+            数据
+            </summary>
+        </member>
+        <member name="T:DotNet.Helper.OtherHelper">
+            <summary>
+            其他帮助类
+            </summary>
+        </member>
+        <member name="F:DotNet.Helper.OtherHelper.ValCodeArr">
+            <summary>
+            身份证最后一位数组
+            </summary>
+        </member>
+        <member name="F:DotNet.Helper.OtherHelper.Wi">
+            <summary>
+            身份证最后一位验证码
+            </summary>
+        </member>
+        <member name="F:DotNet.Helper.OtherHelper.Provinces">
+            <summary>
+            身份证省份数组
+            </summary>
+        </member>
+        <member name="M:DotNet.Helper.OtherHelper.CreateIdCard">
+            <summary>
+            生成身份证号码
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:DotNet.Helper.TcpClientHelper">
+            <summary>
+            tcp客户端帮助类
+            </summary>
+        </member>
+        <member name="P:DotNet.Helper.TcpClientHelper.Host">
+            <summary>
+            主机地址
+            </summary>
+        </member>
+        <member name="P:DotNet.Helper.TcpClientHelper.Port">
+            <summary>
+            端口
+            </summary>
+        </member>
+        <member name="M:DotNet.Helper.TcpClientHelper.#ctor(System.String,System.Int32)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="host">主机地址</param>
+            <param name="port">端口</param>
+        </member>
+        <member name="M:DotNet.Helper.TcpClientHelper.Connect">
+            <summary>
+            连接服务
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:DotNet.Helper.RsaHelper">
+            <summary>
+            RSA帮助类
+            </summary>
+        </member>
+        <member name="F:DotNet.Helper.RsaHelper._rsaKey">
+            <summary>
+            RSA秘钥
+            </summary>
+        </member>
+        <member name="F:DotNet.Helper.RsaHelper._publicKeyParam">
+            <summary>
+            公钥参数
+            </summary>
+        </member>
+        <member name="F:DotNet.Helper.RsaHelper._privateKeyParam">
+            <summary>
+            私钥参数
+            </summary>
+        </member>
+        <member name="M:DotNet.Helper.RsaHelper.CreateRsaKey">
+            <summary>
+            产生RSA秘钥
+            </summary>
+            <returns>返回RSA的秘钥</returns>
+        </member>
+        <member name="M:DotNet.Helper.RsaHelper.SetRsaKey(System.String,System.String)">
+            <summary>
+            设置Rsa秘钥
+            </summary>
+            <param name="publicKey">公钥字符串</param>
+            <param name="privateKey">私钥字符串</param>
+        </member>
+        <member name="M:DotNet.Helper.RsaHelper.EncryptByPrivateKey(System.String)">
+            <summary>
+            通过私钥加密
+            </summary>
+            <param name="input">需要加密的字符串</param>
+            <returns>加密后的字符串</returns>
+        </member>
+        <member name="M:DotNet.Helper.RsaHelper.EncryptByPublicKey(System.String)">
+            <summary>
+            通过公钥加密
+            </summary>
+            <param name="input">需要加密的字符串</param>
+            <returns>加密后的字符串</returns>
+        </member>
+        <member name="M:DotNet.Helper.RsaHelper.DecryptByPublicKey(System.String)">
+            <summary>
+            通过公钥解密
+            </summary>
+            <param name="input">需要解密的字符串</param>
+            <returns>解密后的字符串</returns>
+        </member>
+        <member name="M:DotNet.Helper.RsaHelper.DecryptByPrivateKey(System.String)">
+            <summary>
+            通过私钥解密
+            </summary>
+            <param name="input">需要解密的字符串</param>
+            <returns>解密后的字符串</returns>
+        </member>
+        <member name="M:DotNet.Helper.RsaHelper.GetPublicKeyParameter(System.String)">
+            <summary>
+            根据公钥字符串获取公钥参数
+            </summary>
+            <param name="publicKeyStr">公钥字符串</param>
+            <returns>公钥参数</returns>
+        </member>
+        <member name="M:DotNet.Helper.RsaHelper.GetPrivateKeyParameter(System.String)">
+            <summary>
+            根据私钥字符串获取私钥参数
+            </summary>
+            <param name="privateKeyStr">私钥字符串</param>
+            <returns>私钥参数</returns>
+        </member>
+        <member name="T:DotNet.Helper.RsaKey">
+            <summary>
+            Rsa秘钥
+            </summary>
+        </member>
+        <member name="P:DotNet.Helper.RsaKey.PublicKey">
+            <summary>
+            公钥字符串
+            </summary>
+        </member>
+        <member name="P:DotNet.Helper.RsaKey.PrivateKey">
+            <summary>
+            私钥字符串
+            </summary>
+        </member>
+        <member name="T:DotNet.Helper.SecretHelper">
+            <summary>
+            加密帮助类
+            </summary>
+        </member>
+        <member name="M:DotNet.Helper.SecretHelper.Md5(System.String)">
+            <summary>
+            MD5加密
+            </summary>
+            <param name="input">需要加密的字符串</param>
+            <returns>加密后的字符串</returns>
+        </member>
+        <member name="M:DotNet.Helper.SecretHelper.Md5_16(System.String)">
+            <summary>
+            16位MD5加密
+            </summary>
+            <param name="input">需要加密的字符串</param>
+            <returns>加密后的字符串</returns>
+        </member>
+        <member name="T:DotNet.Helper.WcfHelper">
+            <summary>
+            WCF帮助类
+            </summary>
+        </member>
+        <member name="P:DotNet.Helper.WcfHelper.DefaultBinding">
+            <summary>
+            默认TcpBinding
+            </summary>
+        </member>
+        <member name="F:DotNet.Helper.WcfHelper.ChkInterval">
+            <summary>
+            服务通道检查间隔 10秒
+            </summary>
+        </member>
+        <member name="M:DotNet.Helper.WcfHelper.GetSvrUri(System.Type,System.String,System.Int32)">
+            <summary>
+            获取服务地址
+            </summary>
+            <param name="serverType"></param>
+            <param name="serverIP"></param>
+            <param name="serverPort"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DotNet.Helper.WcfHelper.GetIPAndPort(System.Type,System.String@,System.Int32@)">
+            <summary>
+            反射获取服务的ip和端口
+            </summary>
+            <param name="serverType">服务类型</param>
+            <param name="ip">ip</param>
+            <param name="port">端口</param>
+            <returns></returns>
+        </member>
+        <member name="T:DotNet.Helper.XmlHelper">
+            <summary>
+            Xml帮助类
+            </summary>
+        </member>
+        <member name="M:DotNet.Helper.XmlHelper.Deserialize(System.Type,System.String)">
+            <summary>
+            反序列化
+            </summary>
+            <param name="type">类型</param>
+            <param name="path">路径</param>
+            <returns></returns>
+        </member>
+        <member name="M:DotNet.Helper.XmlHelper.Serializer(System.Type,System.Object,System.String)">
+            <summary>
+            序列化
+            </summary>
+            <param name="type">类型</param>
+            <param name="obj">对象</param>
+            <param name="path">保存路径</param>
+        </member>
+    </members>
+</doc>
