@@ -19,5 +19,10 @@ namespace Server.Client
             MyService.Test();
             Console.WriteLine("Test");
         }
+
+        public List<TaskDetail> GetAllList()
+        {
+            return MyService.GetAllList();
+        }
     }
 }

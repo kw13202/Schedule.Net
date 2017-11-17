@@ -53,6 +53,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Server.API\Server.API.csproj">
+      <Project>{18E820D8-6796-4244-A9D2-FDD15A7C5371}</Project>
+      <Name>Server.API</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Server.Client\Server.Client.csproj">
       <Project>{b0b980d2-f707-43cc-9825-ccce3d4cd2b5}</Project>
       <Name>Server.Client</Name>

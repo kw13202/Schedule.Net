@@ -12,11 +12,18 @@ namespace Server.Svr
     [ServiceBehavior(InstanceContextMode = InstanceContextMode.Single, ConcurrencyMode = ConcurrencyMode.Multiple)]
     public class ServerManage : IServerManage
     {
+        private ServiceDAL serviceDAL = new ServiceDAL();
+
         public void Test()
         {
 #if DEBUG
             Log4netHelper.Log.WriteInfo("[IServerManage]Someone Testing Connection!");
 #endif
+        }
+
+        public List<TaskDetail> GetAllList()
+        {
+            return serviceDAL.GetAllList();
         }
     }
 }

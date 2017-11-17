@@ -1,10 +1,12 @@
 ﻿using log4net.Config;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Server.Svr;
 using Topshelf;
 
 namespace TaskService
@@ -13,8 +15,9 @@ namespace TaskService
     {
         static void Main(string[] args)
         {
-            var logCfg = new FileInfo(AppDomain.CurrentDomain.BaseDirectory + "log4net.config");
-            XmlConfigurator.ConfigureAndWatch(logCfg);
+            Database.SetInitializer<ServiceDbContext>(new DataBase());
+            //var logCfg = new FileInfo(AppDomain.CurrentDomain.BaseDirectory + "log4net.config");
+            //XmlConfigurator.ConfigureAndWatch(logCfg);
 
             HostFactory.Run(x =>
             {

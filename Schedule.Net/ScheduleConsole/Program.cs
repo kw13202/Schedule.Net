@@ -17,7 +17,8 @@ namespace ScheduleConsole
             {
                 Thread.Sleep(50);//这里必须等WCF连接上
             }
-            SvrFactory.Instance.ServiceSvr.Test();
+            SvrFactory.Instance.ServiceSvr.GetAllList();
+
             Console.ReadKey();
         }
     }
