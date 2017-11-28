@@ -1,0 +1,56 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Quartz.Net任务调度系统</title>
+    <link rel="stylesheet" type="text/css" href="/Content/thrid/layui/css/layui.css" media="all" />
+</head>
+<body class="layui-layout-body">
+    <form class="layui-form">
+        <div class="layui-form-item">
+            <label class="layui-form-label">任务名称</label>
+            <div class="layui-input-block">
+                <input name="JobName" type="text" class="layui-input" lay-verify="required" maxlength="50" placeholder="请输入任务名称">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">任务组别</label>
+            <div class="layui-input-block">
+                <input name="JobGroup" type="text" class="layui-input" lay-verify="required" maxlength="50" placeholder="请输入任务组别">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">触发器名称</label>
+            <div class="layui-input-block">
+                <input name="TriggerName" type="text" class="layui-input" lay-verify="required" maxlength="50" placeholder="请输入触发器名称">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">触发器组别</label>
+            <div class="layui-input-block">
+                <input name="TriggerGroup" type="text" class="layui-input" lay-verify="required" maxlength="50" placeholder="请输入触发器组别">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <div class="layui-input-block">
+                <button class="layui-btn" lay-submit="" lay-filter="addTask">立即提交</button>
+                <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+            </div>
+        </div>
+    </form>
+
+    <script type="text/javascript" src="/Content/thrid/layui/layui.js"></script>
+    <script type="text/javascript" src="/Content/scripts/schedule/add.js"></script>
+    
+    
+
+</body>
+</html>

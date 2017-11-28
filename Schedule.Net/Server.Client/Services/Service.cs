@@ -24,5 +24,22 @@ namespace Server.Client
         {
             return MyService.GetAllList();
         }
+
+
+        public bool AddTaskDetail(TaskDetail model)
+        {
+            return MyService.AddTaskDetail(model);
+        }
+
+        public bool DelTaskDetail(int id)
+        {
+            return MyService.DelTaskDetail(id);
+        }
+
+        public bool EditTaskDetail(TaskDetail model)
+        {
+            return MyService.EditTaskDetail(model);
+        }
+
     }
 }

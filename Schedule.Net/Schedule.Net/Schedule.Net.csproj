@@ -50,11 +50,8 @@
     <Reference Include="Common.Logging.Core, Version=3.3.1.0, Culture=neutral, PublicKeyToken=af08829b84f0328e, processorArchitecture=MSIL">
       <HintPath>..\packages\Common.Logging.Core.3.3.1\lib\net40\Common.Logging.Core.dll</HintPath>
     </Reference>
-    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
-    </Reference>
-    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.8.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.8\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
@@ -107,6 +104,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\scripts\schedule\add.js" />
     <Content Include="Content\scripts\schedule\index.js" />
     <Content Include="Content\thrid\layui\css\layui.css" />
     <Content Include="Content\thrid\layui\css\layui.mobile.css" />
@@ -232,6 +230,7 @@
     </None>
     <None Include="packages.config" />
     <Content Include="Views\Schedule\Index.cshtml" />
+    <Content Include="Views\Schedule\Add.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -241,6 +240,16 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Server.API\Server.API.csproj">
+      <Project>{18E820D8-6796-4244-A9D2-FDD15A7C5371}</Project>
+      <Name>Server.API</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Server.Client\Server.Client.csproj">
+      <Project>{b0b980d2-f707-43cc-9825-ccce3d4cd2b5}</Project>
+      <Name>Server.Client</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

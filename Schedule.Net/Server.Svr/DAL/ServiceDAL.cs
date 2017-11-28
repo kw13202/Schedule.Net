@@ -26,8 +26,12 @@ namespace Server.Svr
         {
             using (ServiceDbContext db = new ServiceDbContext())
             {
-                int result = db.TaskDetails.Where(x => x.Id == id).Delete();
+                var model = new TaskDetail() {Id = id};
+                db.Entry<TaskDetail>(model).State = EntityState.Deleted;
+                //int result = db.TaskDetails.Where(x => x.Id == id).Delete();
+                int result = db.SaveChanges();
                 return result > 0;
+
             }
         }
 

@@ -17,7 +17,11 @@ namespace ScheduleConsole
             {
                 Thread.Sleep(50);//这里必须等WCF连接上
             }
-            SvrFactory.Instance.ServiceSvr.GetAllList();
+            var list = SvrFactory.Instance.ServiceSvr.GetAllList();
+            foreach (var item in list)
+            {
+                Console.WriteLine($"Id:{item.Id},JobName:{item.JobName}");
+            }
 
             Console.ReadKey();
         }

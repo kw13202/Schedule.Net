@@ -1,5 +1,22 @@
-﻿layui.use(['table'], function () {
+﻿layui.use(['jquery', 'table', 'layer', 'form'], function () {
+    var $ = layui.$;
     var table = layui.table;
+    var layer = layui.layer;
+    var form = layui.form;
+
+    $("#btnAddTask").unbind("click").click(function() {
+        var index = layer.open({
+            title: "添加文章",
+            type: 2,
+            area: ['500px', '500px'],
+            resize: false,
+            content: "/Schedule/Add",
+            success: function(layero, idx) {
+
+            }
+        });
+        //layui.layer.full(index);
+    });
 
     table.render({
         //设定容器唯一ID
@@ -7,13 +24,14 @@
         //指定原始表格元素选择器（推荐id选择器）
         elem: '#schedule', 
         //容器高度
-        //height: 315,
+        height: 510,
         //设置表头
         cols: [[
-            { field: 'Name', title: '任务名称', width: 200 },
-            { field: 'Desc', title: '任务描述', width: 200 },
-            { field: 'Remark', title: '备注', width: 200 },
-            { field: 'StrCreateDate', title: '创建时间', width: 200 },
+            { field: 'JobName', title: '任务名称', width: 200 },
+            { field: 'JobGroup', title: '任务组别', width: 200 },
+            { field: 'Description', title: '任务描述', width: 200 },
+            { field: 'TriggerName', title: '触发器名称', width: 200 },
+            { field: 'TriggerGroup', title: '触发器组别', width: 200 },
             { fixed: 'right', width: 250, align: 'center', toolbar: '#scheduleBar' },
         ]], 
 
@@ -71,9 +89,18 @@
             //do somehing
         } else if (layEvent === 'del') { //删除
             layer.confirm('真的删除行么', function (index) {
-                obj.del(); //删除对应行（tr）的DOM结构，并更新缓存
-                layer.close(index);
-                //向服务端发送删除指令
+                $.ajax({
+                    url: "/Schedule/DelTask",
+                    type: "POST",
+                    dataType: "json",
+                    data: {
+                        id: data.Id,
+                    },
+                    success: function (result) {
+                        obj.del(); //删除对应行（tr）的DOM结构，并更新缓存
+                        layer.close(index);
+                    }
+                });
             });
         } else if (layEvent === 'edit') { //编辑
             //do something
